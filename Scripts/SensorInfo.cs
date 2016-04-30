@@ -1,8 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// This is a class to display a text about sensors' information. 
+/// </summary>
 [RequireComponent(typeof(Text))]
 public class SensorInfo : MonoBehaviour {
+	
+	/// <summary>
+	/// A GameObject whose rotation angles are monitored. 
+	/// </summary>
 	[SerializeField]
 	GameObject targetObj;
 	

@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// This is a class to rotate a GameObject by using only a gyroscope. 
+/// </summary>
 public class RotateWithGyro : MonoBehaviour {
 
 	void Start () 

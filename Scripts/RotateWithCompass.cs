@@ -1,10 +1,19 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// This is a class to rotate a GameObject by using a gyroscope and a compass 
+/// to match the direction to the actual azimuth angle. 
+/// </summary>
 public class RotateWithCompass : MonoBehaviour {
 	double lastCompassUpdateTime = 0;
 	Quaternion correction = Quaternion.identity;
 	Quaternion targetCorrection = Quaternion.identity;
 
+	/// <summary>
+	/// A property to return Input.compass.rawVector, 
+	/// On Android, the element changes according to the device orientation, 
+	/// so this corrects that change and returns. 
+	/// </summary>
 	static Vector3 compassRawVector
 	{
 		get
@@ -31,6 +40,9 @@ public class RotateWithCompass : MonoBehaviour {
 		}
 	}
 	
+	/// <summary>
+	/// This is a function to judge a Quaternion includes NaN or infinity values or not. 
+	/// </summary>
 	static bool isNaN(Quaternion q)
 	{
 		bool ret = float.IsNaN(q.x) || float.IsNaN(q.y) || float.IsNaN(q.z) || float.IsNaN(q.w) || 
@@ -39,6 +51,9 @@ public class RotateWithCompass : MonoBehaviour {
 		return ret;
 	}
 	
+	/// <summary>
+	/// This is a function to change the rotation axis of a Quaternion. 
+	/// </summary>
 	static Quaternion changeAxis(Quaternion q)
 	{
 		return new Quaternion(-q.x, -q.y, q.z, q.w);
@@ -71,7 +86,7 @@ public class RotateWithCompass : MonoBehaviour {
  
 			if (Quaternion.Angle(correction, targetCorrection) < 45)
 				correction = Quaternion.Slerp(correction, targetCorrection, 0.02f);
-			else
+			else 
 				correction = targetCorrection;
 
 			transform.localRotation = correction * gorientation;		

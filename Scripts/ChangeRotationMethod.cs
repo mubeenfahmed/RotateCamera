@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// This is a class to toggle a rotation method: RotateWithGyro and RotateWithCompass. 
+/// </summary>
 public class ChangeRotationMethod : MonoBehaviour {
 	
 	public enum RotateMethod
@@ -33,7 +36,6 @@ public class ChangeRotationMethod : MonoBehaviour {
 		SetRotateMethod();
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		if(Input.GetMouseButtonUp(0))
 		{
