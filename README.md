@@ -2,6 +2,8 @@
 
 This project includes sample codes and assets to demonstrate rotating camera on Unity 
 by using gyroscopes and compasses of mobile devices. 
+The rotation method using gyro and compass was implemented by reference to the Unity Forum page
+(http://forum.unity3d.com/threads/match-unity-camera-with-iphone-camera.128493/). 
 
 ## How to use
 If you attach RotateWithGyro.cs with your camera, 

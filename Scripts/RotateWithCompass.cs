@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿// Copyright (c) 2016 Yasuhide Okamoto
+// Released under the MIT license
+// http://opensource.org/licenses/mit-license.php
+
+using UnityEngine;
 
 /// <summary>
 /// This is a class to rotate a GameObject by using a gyroscope and a compass 
